@@ -1,7 +1,7 @@
 # in-class-activities
 ## Devlogs
 ### W1
-Write your W1 activity Devlog here.
+hello world
 
 ### W2
 1. The r, g, b are floats because they have decimal numbers.
