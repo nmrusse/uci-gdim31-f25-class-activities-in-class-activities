@@ -24,7 +24,7 @@ If our game object was a surfboard:
 The surfboard class/make is the design for the board...
 The sprite renderer component lets you see what it looks like
 
-A class is like a blueprint and a component is like a key feature
+A class is like a blueprint and a component is like a key feature hello
 
 methods and member variables allow you to see the different parts of the board that work together
 
