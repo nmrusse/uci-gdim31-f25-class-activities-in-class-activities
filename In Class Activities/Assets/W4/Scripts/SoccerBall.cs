@@ -7,7 +7,8 @@ public class SoccerBall : MonoBehaviour
     [SerializeField] private TMP_Text _pointsText;
     [SerializeField] private TMP_Text _timeText;
     [SerializeField] private ParticleSystem _goalVFX;
-
+    [SerializeField]private int _points;
+[SerializeField] private float _timesincegoal=0.0f;
     // STEP 1 -----------------------------------------------------------------
     // The OnTriggerEnter method is a collision method called by Unity that
     //      tells our object when it's hit a collider with Is Trigger checked.
@@ -21,22 +22,29 @@ public class SoccerBall : MonoBehaviour
     //
     // Also, uncomment and FIX the Debug.Log line.
 
-    //private ?? ??
-    //{
+    private float speed = 1.0f;
+    private void OnTriggerEnter(Collider other)
+    {
         // finish STEP 1 by uncommenting and fixing the below line!
-        //Debug.Log(SoccerBall detected a collision with a trigger collider!);
+        // Debug.Log("SoccerBall detected a collision with a trigger collider!");
 
         // STEP 2 -------------------------------------------------------------
         // Write an IF STATEMENT to check if the game object we collided with
         //      has the tag "Goal".
         // Refer to the slides for an example of how to check this :)
-        //
+        if(other.gameObject.tag.Equals("Goal"))
+        {
+            Debug.Log("SoccerBall detected a collision with a trigger collider!");
+
+            MadeGoal();
+        }
         // Then, move your Debug.Log() statement so that it's only called if
         //      the colliding object has the "Goal" tag.
+       
 
 
         // STEP 2 -------------------------------------------------------------
-    //}
+    }
 
     // STEP 1 -----------------------------------------------------------------
 
@@ -45,8 +53,19 @@ public class SoccerBall : MonoBehaviour
     // Next, we're going to make a method named MadeGoal to call if the
     //      SoccerBall collided with an object tagged "Goal".
     // MadeGoal RETURNS NOTHING, and has NO INPUT.
-    // 
+    private void MadeGoal()
+    {
+        Debug.Log("SoccerBall made a goal!");
+        _goalVFX.Play();
+        _points++;
+        _pointsText.text = "points: " + _points;
+
+        _timesincegoal = 0.0f;
+       
+
+    }
     // Once you've created MadeGoal,
+    
     //      move your Debug.Log() statement into MadeGoal, and
     //      call MadeGoal from inside your if statement in OnTriggerEnter.
     
@@ -56,7 +75,7 @@ public class SoccerBall : MonoBehaviour
         // https://docs.unity3d.com/6000.0/Documentation/ScriptReference/ParticleSystem.Play.html 
         //
         // Call Play on _goalVFX.
-
+       
         // STEP 4 -------------------------------------------------------------
     
     
@@ -76,6 +95,8 @@ public class SoccerBall : MonoBehaviour
     // You will need to:
     //      1. Create a new member variable to keep track of the points.
     //      2. Use your MadeGoal method to update the points and text.
+
+   
     //
     // STEP 5 -----------------------------------------------------------------
     
@@ -94,5 +115,10 @@ public class SoccerBall : MonoBehaviour
     //              and update _timeText with the new time.
     //      2. Use the MadeGoal method to reset your
     //              time variable when the player makes a goal. 
+     private void Update()
+     {_timesincegoal += Time.deltaTime;
+        _timeText.text = "time: " + _timesincegoal;}
+    
+
     // STEP 6 -----------------------------------------------------------------
 }

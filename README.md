@@ -31,3 +31,7 @@ methods and member variables allow you to see the different parts of the board t
 ## Devlog Week 3 Activity Question
 1. I think the balls get extremely bright because of the color and speed settings we applied when they collide. The difference of color signals a shift in the speed.
    
+## Devlog Week 4 In Class Activity 
+Table 18:
+1. We decided that the cat and soccerball needed rigbody components and the goal post needed a trigger because the cat and ball need to be mobile while the goal is unmvoing.
+2. I had to fix a lot of semicolons and orginzational issues. I really struggled with trying to reset the time and where to put the functions but I figured it out with the help of an LA.
