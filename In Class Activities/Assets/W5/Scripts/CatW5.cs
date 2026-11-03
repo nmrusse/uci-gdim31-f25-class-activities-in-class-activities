@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CatW5 : MonoBehaviour
 {
+
     [SerializeField] private bool _flipWSControls;
     [SerializeField] private float _moveSpeed = 1.0f;
     [SerializeField] private float _turnSpeed = 1.0f;
@@ -15,7 +16,22 @@ public class CatW5 : MonoBehaviour
         // STEP 1
         // This CatW5 class is a Component on the Cat GameObject. It controls
         //      the cat's movement.
-        //
+       
+    
+        Vector3 movement = Vector3.zero;
+
+        if  (Input.GetKey(KeyCode.W))
+        {
+            Vector3 forward = new Vector3(0, 0, 1);
+            movement += forward;
+        }
+          if  (Input.GetKey(KeyCode.S))
+        {
+            Vector3 backward = new Vector3(0, 0, -1);
+            movement += backward;
+        }
+
+        transform.Translate(movement * _moveSpeed * Time.deltaTime);
         // The Cat should move forwards and backwards with the W and S keys.
         //
         // Use the "static properties" listed under the Vector3 documentation:
@@ -44,9 +60,7 @@ public class CatW5 : MonoBehaviour
         // MULTIPLY one of your vectors with a certain value to do this. >:)
 
         Vector3 translation = Vector3.zero;
-        
-
-
+       
         // STEP 1 & 2 ---------------------------------------------------------
 
         float rotation = Input.GetAxis("Horizontal") * _turnSpeed * Time.deltaTime;
@@ -61,4 +75,4 @@ public class CatW5 : MonoBehaviour
             _animator.SetBool(_isWalkingName, false);
         }
     }
-}
+}  

@@ -1,5 +1,6 @@
 # in-class-activities
 ## Devlogs
+
 ### W1
 hello world
 
@@ -7,11 +8,11 @@ hello world
 1. The r, g, b are floats because they have decimal numbers.
 2. The _bounce variable is an int because it has whole numbers
 3. I needed to add a semi colon to the end of the code to make it work.
-## Open-Source Assets
+
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
 - Low-poly environment: https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153
-- ## Devlog Week 3 Activity
+- ## W3
 Table #18
 1. public string GetResponse(int friendshipLevel, bool knowsSecret)
 This would be a bool/ true or false. Because if the friendship level is high (true) then it would give back certain answers/ a flag.
@@ -28,10 +29,21 @@ A class is like a blueprint and a component is like a key feature hello
 
 methods and member variables allow you to see the different parts of the board that work together
 
-## Devlog Week 3 Activity Question
+
 1. I think the balls get extremely bright because of the color and speed settings we applied when they collide. The difference of color signals a shift in the speed.
    
-## Devlog Week 4 In Class Activity 
+### W4
 Table 18:
 1. We decided that the cat and soccerball needed rigbody components and the goal post needed a trigger because the cat and ball need to be mobile while the goal is unmvoing.
 2. I had to fix a lot of semicolons and orginzational issues. I really struggled with trying to reset the time and where to put the functions but I figured it out with the help of an LA.
+
+### W6
+- Deer must have a public class monobehavior
+-  navmesh automatically updates
+- deer isn't colliding with anything
+- start method so deer moves when game starts
+
+I struggled to figure out the flip controls for the keys
+
+
+## Open-Source Assets
