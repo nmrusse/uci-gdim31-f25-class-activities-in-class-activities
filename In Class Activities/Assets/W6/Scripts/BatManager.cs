@@ -9,6 +9,10 @@ public class BatManager : MonoBehaviour
     [SerializeField] private float _timeBetweenNewMessages = 0.5f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private TMP_Text _reactionUiPrefab;
+    [SerializeField] private BatW6[] _bats;
+    [SerializeField] private string[] _messages;
+    [SerializeField] private Transform _player;
+   
     // STEP 1 -----------------------------------------------------------------
     // Add a member variable named "_bats" that's an array of BatW6 Components.
     // In the Inspector, add ALL of the bats in the Scene.
@@ -38,13 +42,40 @@ public class BatManager : MonoBehaviour
         // That means the bat at _bats[0] has a timer at _newTextTimers[0],
         //      the bat at _bats[1] has a timer at _newTextTimers[1],
         //      and so on.
-        // _newTextTimers = new [_bats.Length];
+        _newTextTimers = new float[_bats.Length];
         // STEP 6 -------------------------------------------------------------
     }
 
     // ------------------------------------------------------------------------
-    private void Update()
+    
+        private void Update()
+        {
+    for (int i = 0; i < _bats.Length; i++)
     {
+        _newTextTimers[i] += Time.deltaTime;
+
+        BatW6 bat = _bats[i];
+
+        if (Vector3.Distance(bat.transform.position, _playerTransform.position) < _interactDistance)
+        {
+            bat.StartChasing();
+        }
+        else
+        {
+            bat.StopChasing();
+        }
+
+        if (Vector3.Distance(bat.transform.position, _playerTransform.position) < _overlapDistance)
+        {
+            CreateReactions(bat);
+        }
+    }
+
+    // STEP 7
+    // Add timer code here.
+
+            
+        
         // STEP 7 -------------------------------------------------------------
         // Loop through all of the entries in _newTextTimers, and increase each
         //      timer's value by the amount of time that passed this frame.
@@ -77,7 +108,10 @@ public class BatManager : MonoBehaviour
 
     // ------------------------------------------------------------------------
     private void CreateReactions(BatW6 bat)
-    {
+    { int randomIndex = Random.Range(0, _messages.Length);
+
+    SpawnReactionUI(bat, _messages[randomIndex]);
+   
         // STEP 5 -------------------------------------------------------------
         // The Random.Range() method can be used to give us a random number
         //      between two values.
@@ -107,7 +141,7 @@ public class BatManager : MonoBehaviour
         // /* starts the comments, and */ ends it.
         // Simply uncomment the below lines by removing the /* and */ to finish.
 
-        /*
+        
         int index = System.Array.IndexOf(_bats, bat);
         
         GridLayoutGroup layout = bat.GetComponentInChildren<GridLayoutGroup>();
@@ -117,7 +151,7 @@ public class BatManager : MonoBehaviour
             TMP_Text textObj = Instantiate(_reactionUiPrefab, layout.transform);
             textObj.text = message;
         }
-        */
+        
 
         // STEP 8 -------------------------------------------------------------
     }
