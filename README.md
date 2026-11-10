@@ -45,5 +45,14 @@ Table 18:
 
 I struggled to figure out the flip controls for the keys
 
+### W7
+- https://docs.google.com/document/d/1XDWYyMudvxGwSmHYFAoLHSPJA9q0LByFpcUUr684WHo/edit?usp=sharing
+- Worked on all categories but mainly Unity Coding, Unity Engine, and added to extra tools.
+
+Bat Notes:
+- Bat would need a public void for chasing, and bool variable to determine when to chase cat
+- Should have start and update method but also must stop
+- the methods should allow the bat start and stop moving 
+- we must know where the cat is located 
 
 ## Open-Source Assets
