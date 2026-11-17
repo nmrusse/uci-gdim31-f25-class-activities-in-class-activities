@@ -55,4 +55,8 @@ Bat Notes:
 - the methods should allow the bat start and stop moving 
 - we must know where the cat is located 
 
+### W8
+
+- In step 2, the previous code that was shown utilized the wrong Vector3 direction when it should be using transform.forward.
+
 ## Open-Source Assets
