@@ -59,4 +59,14 @@ Bat Notes:
 
 - In step 2, the previous code that was shown utilized the wrong Vector3 direction when it should be using transform.forward.
 
+### W9
+
+- looked through the features to decide what final to do
+- weighed options with my peers and exchanged contact info for help
+- settled on 2d
+- starting with creating background, platforms, and items
+- focus on player movement/kicking animation
+- watched more videos on how to use animation + spritesheet
+- stategize what game objects to draw/create in game
+
 ## Open-Source Assets
