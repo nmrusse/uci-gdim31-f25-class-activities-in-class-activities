@@ -68,5 +68,6 @@ Bat Notes:
 - focus on player movement/kicking animation
 - watched more videos on how to use animation + spritesheet
 - stategize what game objects to draw/create in game
+https://docs.google.com/drawings/d/1daxP7CnPmRKzXxTnv2pYLJuWIU2sRbkGUbbG39SUqpo/edit
 
 ## Open-Source Assets
